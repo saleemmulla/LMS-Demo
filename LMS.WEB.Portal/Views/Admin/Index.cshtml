@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<div class="jumbotron" style="background: linear-gradient(to left, #777, #33AEFF)">
+    <div class="text-center">
+        <h2 class="display-4">Welcome To Leave Management </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+
+        <button class="btn btn-lg btn-facebook btn-block " value="Home"
+                onclick="location.href='@Url.Action("ApproveOrReject", "Admin")'"
+                type="button">
+            Approve/Reject Leaves
+        </button>
+    </div>
+    <div class="col-md-9">
+
+    </div>
+</div>
+
+

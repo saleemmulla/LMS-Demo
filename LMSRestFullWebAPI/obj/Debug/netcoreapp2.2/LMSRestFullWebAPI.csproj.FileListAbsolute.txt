@@ -1,0 +1,14 @@
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.AssemblyInfoInputs.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.AssemblyInfo.cs
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\bin\Debug\netcoreapp2.2\LMSRestFullWebAPI.deps.json
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\bin\Debug\netcoreapp2.2\LMSRestFullWebAPI.runtimeconfig.json
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\bin\Debug\netcoreapp2.2\LMSRestFullWebAPI.runtimeconfig.dev.json
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\bin\Debug\netcoreapp2.2\LMSRestFullWebAPI.dll
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\bin\Debug\netcoreapp2.2\LMSRestFullWebAPI.pdb
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.csprojAssemblyReference.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.RazorAssemblyInfo.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.RazorAssemblyInfo.cs
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.dll
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSRestFullWebAPI\obj\Debug\netcoreapp2.2\LMSRestFullWebAPI.pdb

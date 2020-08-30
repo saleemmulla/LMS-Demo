@@ -1,0 +1,6 @@
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSUtilities\bin\Debug\LMSUtilities.dll
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSUtilities\bin\Debug\LMSUtilities.pdb
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSUtilities\obj\Debug\LMSUtilities.csprojAssemblyReference.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSUtilities\obj\Debug\LMSUtilities.csproj.CoreCompileInputs.cache
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSUtilities\obj\Debug\LMSUtilities.dll
+C:\Users\saleem_mulla\Documents\SaleemWork\P\Personal\Source\LMS\LMSUtilities\obj\Debug\LMSUtilities.pdb

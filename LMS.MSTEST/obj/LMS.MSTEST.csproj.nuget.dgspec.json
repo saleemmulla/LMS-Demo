@@ -1,0 +1,200 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.MSTEST\\LMS.MSTEST.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.MSTEST\\LMS.MSTEST.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.MSTEST\\LMS.MSTEST.csproj",
+        "projectName": "LMS.MSTEST",
+        "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.MSTEST\\LMS.MSTEST.csproj",
+        "packagesPath": "C:\\Users\\saleem_mulla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.MSTEST\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\saleem_mulla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Local NuGet Feed": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://dcsartifacts.dell.com/artifactory/api/nuget/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dcsartifacts.dell.com/artifactory/api/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.WEB.Portal\\LMS.WEB.Portal.csproj": {
+                "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.WEB.Portal\\LMS.WEB.Portal.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.5, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.WEB.Portal\\LMS.WEB.Portal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.WEB.Portal\\LMS.WEB.Portal.csproj",
+        "projectName": "LMS.WEB.Portal",
+        "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.WEB.Portal\\LMS.WEB.Portal.csproj",
+        "packagesPath": "C:\\Users\\saleem_mulla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMS.WEB.Portal\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\saleem_mulla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Local NuGet Feed": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://dcsartifacts.dell.com/artifactory/api/nuget/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dcsartifacts.dell.com/artifactory/api/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSUtilities\\LMSUtilities.csproj": {
+                "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSUtilities\\LMSUtilities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.SqlServer.Compact": {
+              "target": "Package",
+              "version": "[4.0.8876.1, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.7.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSUtilities\\LMSUtilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSUtilities\\LMSUtilities.csproj",
+        "projectName": "LMSUtilities",
+        "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSUtilities\\LMSUtilities.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

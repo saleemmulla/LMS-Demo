@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "ApproveOrReject";
+}
+ 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('[id*=btnOK]').on('click', function () {
+            var id = $(this).closest('tr').find('td').eq(0).html().trim();
+            $.post("/Manager/ApproveOrRejectLeave", { ID: id, sCode: 2 }, function (r)
+            {
+ 
+            });
+        });
+    });
+    $(function () {
+        $('[id*=btnCancel]').on('click', function () {
+            var id = $(this).closest('tr').find('td').eq(0).html().trim();
+            $.post("/Manager/ApproveOrRejectLeave", { ID: id, sCode: 3 }, function (r) {
+                
+            });
+        });
+    });
+</script>
+ 
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Approve or Reject leaves of your employee </h5>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-link btn-lg float-right" onclick="location.href='@Url.Action("Index", "Manager")'">Back</button>
+        </div>
+    </div>
+    <hr />
+    <table id="leavetable" class="table table-bordered">
+        <thead bgcolor="lightblue">
+            <tr>
+                <th>Leave ID</th>
+                <th>BadgeNumber</th>
+                <th>EmployeeName</th>
+                <th>DepartmentName</th>
+                <th>From Date</th>
+                <th>To Date</th>
+                <th>No of Leave</th>
+                <th>Approve/Reject</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (LeaveModel lm in Model)
+            {
+                <tr>
+                    <td>@lm.ID</td>
+                    <td>@lm.BadgeNumber</td>
+                    <td>@lm.EmployeeName</td>
+                    <td>@lm.DepartmentName</td>
+                    <td>@lm.LeaveFromDate.ToString("dd-MM-yyy")</td>
+                    <td>@lm.LeaveToDate.ToString("dd-MM-yyy")</td>
+                    <td>@lm.NumberOfLeaves</td>
+                    <td>
+                        <button id="btnOK" type="submit" class="btn-sm btn-primary" @(lm.Status > 1 ? "disabled='disabled'" : "")>ok</button>
+                        <button id="btnCancel" type="submit" class="btn-sm btn-danger" @(lm.Status > 1 ? "disabled='disabled'" : "")>X</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <h6>Note: In case of Approved/Rejected Leave action button will be disabled. In case if you won't notice change then kindly click BACK and come again  </h6>
+        </div>
+
+    </div>
+
+<div class="modal fade" id="aModal" tabindex="-1" role="dialog" aria-labelledby="aModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="aModalLabel">Message</h4>
+            </div>
+            <div class="modal-body">
+                @ViewBag.Result
+            </div>
+            <div class="modal-footer">
+                <button id="" type="button" class="btn btn-primary">OK</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    if (ViewBag.Result != null)
+    {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#aModal").modal('show');
+            });
+        </script>
+    }
+}
+
+

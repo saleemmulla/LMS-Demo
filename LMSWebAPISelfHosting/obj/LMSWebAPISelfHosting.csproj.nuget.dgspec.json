@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSWebAPISelfHosting\\LMSWebAPISelfHosting.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSWebAPISelfHosting\\LMSWebAPISelfHosting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSWebAPISelfHosting\\LMSWebAPISelfHosting.csproj",
+        "projectName": "LMSWebAPISelfHosting",
+        "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSWebAPISelfHosting\\LMSWebAPISelfHosting.csproj",
+        "packagesPath": "C:\\Users\\saleem_mulla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSWebAPISelfHosting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\saleem_mulla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Local NuGet Feed": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://dcsartifacts.dell.com/artifactory/api/nuget/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dcsartifacts.dell.com/artifactory/api/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.SelfHost": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

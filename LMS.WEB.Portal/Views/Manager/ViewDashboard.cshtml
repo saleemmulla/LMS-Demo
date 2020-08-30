@@ -1,0 +1,79 @@
+﻿@using LMS.WEB.Portal.Models;
+@model IEnumerable<LeaveModel>
+@{
+    ViewData["Title"] = "ViewDashboard";
+    IEnumerable<LeaveMaster> leaveMasters = (IEnumerable<LeaveMaster>)TempData["leaveMaster"];
+
+}
+<div class="row">
+    <div class="col-md-6">
+        <h4>Leave Master</h4>
+    </div>
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-2">
+        <button type="button" class="btn btn-link btn-lg float-right" onclick="location.href='@Url.Action("Index", "Manager")'">Back</button>
+    </div>
+</div>
+<hr />
+<table id="leaveMastester" class="table table-bordered">
+    <thead bgcolor="#5E96AE">
+        <tr>
+            <th>Leave Tpe</th>
+            <th>Alloted Leaves</th>
+            <th>Used Leaves</th>
+            <th>Balance Leave</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (leaveMasters != null)
+        {
+            @foreach (LeaveMaster lm in leaveMasters)
+            {
+                <tr>
+                    <td>@lm.LeaveTypeName</td>
+                    <td>@lm.AllotedLeaves</td>
+                    <td>@lm.UsedLeaves</td>
+                    <td>@lm.BalanceLeave</td>
+                    <td>@lm.Year</td>
+                </tr>
+            }
+        }
+</table>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <h5>Applied Leave deatails</h5>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+<table id="leavetable" class="table   table-striped">
+    <thead bgcolor="lightblue">
+        <tr>
+            <th>Badge #</th>
+            <th>Employee Name</th>
+            <th>Department Name</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>No of Leave</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (LeaveModel lm in Model)
+        {
+            <tr>
+                <td>@lm.BadgeNumber</td>
+                <td>@lm.EmployeeName</td>
+                <td>@lm.DepartmentName</td>
+                <td>@lm.LeaveFromDate.ToString("dd-MM-yyy")</td>
+                <td>@lm.LeaveToDate.ToString("dd-MM-yyy")</td>
+                <td>@lm.NumberOfLeaves</td>
+                <td>@lm.StatusName</td>
+            </tr>
+        }
+    </tbody>
+</table>

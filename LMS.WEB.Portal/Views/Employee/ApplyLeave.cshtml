@@ -1,0 +1,102 @@
+﻿@model LMS.WEB.Portal.Models.LeaveModel
+<h4>Apply Leave</h4>
+@{
+    Userdetails userdetails = (Userdetails)TempData["userdetails"];
+}
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <form class="form-signin" role="form" asp-action="ApplyLeave" asp-controller="Home" method="post">
+            <div class="row">
+                <div class="col-md-2">Badge</div>
+                <div class="col-md-4">
+                    <input type="text" id="BadgeNumber" name="BadgeNumber" readonly='readonly' autocomplete="off" class="form-control" value =@if (Model != null){ @Model.BadgeNumber} >
+                </div>
+
+                <div class="col-md-2">Employee Name</div>
+                <div class="col-md-4">  <input type="text" id="EmployeeName" name="EmployeeName" readonly='readonly' autocomplete="off" class="form-control" value=@if (Model != null) {@Model.EmployeeName} ></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">Department</div>
+                <div class="col-md-4">
+                    <input type="text" id="DepartmentName" name="DepartmentName" readonly='readonly' autocomplete="off" class="form-control" value=@if (Model != null) {@Model.DepartmentName} >
+                </div>
+
+                <div class="col-md-2">Manager</div>
+                <div class="col-md-4">  <input type="text" id="ManagerName" name="ManagerName" readonly='readonly' autocomplete="off" class="form-control" value=@if (Model != null) {@Model.ManagerName }></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">Type Of Leave</div>
+                <div class="col-md-4">
+                   @if (Model.LeaveType != null)
+                   {
+                     <select asp-for="LeaveTypeId" asp-items="@(new SelectList(Model.LeaveType, "LeaveTypeId", "LeaveTypeName"))"></select>
+                   }</div>
+            </div>
+
+            <br />
+            <div class="row">
+                <div class="col-md-2">
+                    From Date
+                </div>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => @model.LeaveFromDate, new { htmlAttributes = new { @class = "form-control oso", @type = "date" } })
+                </div>
+                <div class="col-md-2">To Date</div>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => @model.LeaveToDate, new { htmlAttributes = new { @class = "form-control oso", @type = "date" } })
+                    <span asp-validation-for="LeaveToDate" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">Reason</div>
+                <div class="col-md-4">
+                    <input type="text" id="Reason" name="Reason"  autocomplete="off"  class="form-control" required autofocus>
+                </div>
+
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="btn btn-lg btn-facebook btn-block " value="Home"
+                            type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+}
+
+<div class="modal fade" id="aModal" tabindex="-1" role="dialog" aria-labelledby="aModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="aModalLabel">Message</h4>
+            </div>
+            <div class="modal-body">
+                @ViewBag.Result
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Employee")'">OK</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    if (ViewBag.Result != null)
+    {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#aModal").modal('show');
+            });
+        </script>
+    }
+}

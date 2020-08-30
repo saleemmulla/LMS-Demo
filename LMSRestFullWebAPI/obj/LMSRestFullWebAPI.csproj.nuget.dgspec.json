@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSRestFullWebAPI\\LMSRestFullWebAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSRestFullWebAPI\\LMSRestFullWebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSRestFullWebAPI\\LMSRestFullWebAPI.csproj",
+        "projectName": "LMSRestFullWebAPI",
+        "projectPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSRestFullWebAPI\\LMSRestFullWebAPI.csproj",
+        "packagesPath": "C:\\Users\\saleem_mulla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\saleem_mulla\\Documents\\SaleemWork\\P\\Personal\\Source\\LMS\\LMSRestFullWebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\saleem_mulla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Local NuGet Feed": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://dcsartifacts.dell.com/artifactory/api/nuget/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dcsartifacts.dell.com/artifactory/api/nuget/nuget": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.7.12, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.9.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

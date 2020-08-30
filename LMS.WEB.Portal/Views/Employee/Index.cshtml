@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Employee";
+}
+
+<div class="jumbotron" style="background: linear-gradient(to left, #777, #33AEFF)">
+    <div class="text-center">
+        <h2 class="display-4">Welcome To Leave Management </h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+
+        <button class="btn btn-lg btn-facebook btn-block " value="Home"
+                onclick="location.href='@Url.Action("ApplyLeave", "Employee")'"
+                type="button">
+            Apply for Leave
+        </button>
+        @*<button class="btn btn-lg btn-facebook btn-block " value="Home"
+                onclick="location.href='@Url.Action("MyLeave", "Employee")'"
+                type="button">
+            My Leaves
+        </button>*@
+        <button class="btn btn-lg btn-facebook btn-block " value="Home"
+                onclick="location.href='@Url.Action("ViewDashboard", "Employee")'"
+                type="button">
+            View Dashboard
+        </button>
+    </div>
+    <div class="col-md-9">
+
+    </div>
+</div>
+ 
+
