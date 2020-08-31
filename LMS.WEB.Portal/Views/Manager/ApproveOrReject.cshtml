@@ -1,28 +1,8 @@
 ﻿@{
     ViewData["Title"] = "ApproveOrReject";
 }
- 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('[id*=btnOK]').on('click', function () {
-            var id = $(this).closest('tr').find('td').eq(0).html().trim();
-            $.post("/Manager/ApproveOrRejectLeave", { ID: id, sCode: 2 }, function (r)
-            {
- 
-            });
-        });
-    });
-    $(function () {
-        $('[id*=btnCancel]').on('click', function () {
-            var id = $(this).closest('tr').find('td').eq(0).html().trim();
-            $.post("/Manager/ApproveOrRejectLeave", { ID: id, sCode: 3 }, function (r) {
-                
-            });
-        });
-    });
-</script>
- 
+@using (Html.BeginForm())
+{
     <div class="row">
         <div class="col-md-6">
             <h5>Approve or Reject leaves of your employee </h5>
@@ -40,39 +20,52 @@
                 <th>Leave ID</th>
                 <th>BadgeNumber</th>
                 <th>EmployeeName</th>
-                <th>DepartmentName</th>
+                @*<th>DepartmentName</th>*@
                 <th>From Date</th>
                 <th>To Date</th>
                 <th>No of Leave</th>
+                <th>Leave Type</th>
+                <th>Status</th>
                 <th>Approve/Reject</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (LeaveModel lm in Model)
+            @if (Model != null)
             {
-                <tr>
-                    <td>@lm.ID</td>
-                    <td>@lm.BadgeNumber</td>
-                    <td>@lm.EmployeeName</td>
-                    <td>@lm.DepartmentName</td>
-                    <td>@lm.LeaveFromDate.ToString("dd-MM-yyy")</td>
-                    <td>@lm.LeaveToDate.ToString("dd-MM-yyy")</td>
-                    <td>@lm.NumberOfLeaves</td>
-                    <td>
-                        <button id="btnOK" type="submit" class="btn-sm btn-primary" @(lm.Status > 1 ? "disabled='disabled'" : "")>ok</button>
-                        <button id="btnCancel" type="submit" class="btn-sm btn-danger" @(lm.Status > 1 ? "disabled='disabled'" : "")>X</button>
-                    </td>
-                </tr>
+                @foreach (LeaveModel lm in Model)
+                {
+                    <tr>
+                        <td>@lm.ID</td>
+                        <td>@lm.BadgeNumber</td>
+                        <td>@lm.EmployeeName</td>
+                        @*<td>@lm.DepartmentName</td>*@
+                        <td>@lm.LeaveFromDate.ToString("dd-MM-yyy")</td>
+                        <td>@lm.LeaveToDate.ToString("dd-MM-yyy")</td>
+                        <td>@lm.NumberOfLeaves</td>
+                        <td>
+                            @if (@lm.LeaveType != null)
+                            {
+                                <select asp-items="@(new SelectList(@lm.LeaveType, "LeaveTypeId", "LeaveTypeName"))"></select>
+                            } 
+                        </td>
+                        <td>@lm.StatusName</td>
+                        <td>
+                            <button id="btnOK" type="button" class="btn-sm btn-primary" onclick="location.href='@Url.Action("ApproveOrRejectLeave", "Manager", new { id = lm.ID, sCode = 2 })'" @(lm.Status > 1 ? "disabled='disabled'" : "")>ok</button>
+                            <button id="btnCancel" type="button" class="btn-sm btn-danger" onclick="location.href='@Url.Action("ApproveOrRejectLeave", "Manager", new { id = lm.ID, sCode = 3 })'" @(lm.Status > 1 ? "disabled='disabled'" : "")>X</button>
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
     <hr />
     <div class="row">
         <div class="col-md-12">
-            <h6>Note: In case of Approved/Rejected Leave action button will be disabled. In case if you won't notice change then kindly click BACK and come again  </h6>
+            <h6>Note: In case of Approved/Rejected Leave action button will be disabled. </h6>
         </div>
 
     </div>
+}
 
 <div class="modal fade" id="aModal" tabindex="-1" role="dialog" aria-labelledby="aModalLabel"
      aria-hidden="true">
@@ -85,8 +78,7 @@
                 @ViewBag.Result
             </div>
             <div class="modal-footer">
-                <button id="" type="button" class="btn btn-primary">OK</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="" type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ApproveOrReject", "Manager")'">OK</button>
             </div>
         </div>
     </div>

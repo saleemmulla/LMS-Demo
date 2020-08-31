@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LMS.WEB.Portal.Common;
 using LMS.WEB.Portal.Models;
 using LMS.WEB.Portal.Repository;
 using LMSUtilities;
@@ -38,25 +39,25 @@ namespace LMS.WEB.Portal.Controllers
             }
             return View(leavesModel);
         }
-        public ActionResult ApproveOrRejectLeave(int id, int stausCode)
+        public ActionResult ApproveOrRejectLeave(int id, int sCode)
         {
             bool IsLeaveApprovedOrRejected = false;
-            IsLeaveApprovedOrRejected = _leaveRepository.ApproveOrRejectLeave(id, stausCode);
+            IsLeaveApprovedOrRejected = _leaveRepository.ApproveOrRejectLeave(id, sCode);
             string userName = HttpContext.Session.GetString("userId");
             IEnumerable<LeaveModel> leavesModel = _userDetailRepository.GetMyEmployeeLeaveAR(userName);
             var approvedOrRejected = leavesModel.Where(lm => lm.ID == id).FirstOrDefault();
             string emailID = _userDetailRepository.GetUserEmailIdByBadgeNumber(approvedOrRejected.BadgeNumber);
             if (IsLeaveApprovedOrRejected)
             {
-                ViewBag.Result = "Saved Succesfully";
-                TempData["Success"] = "Added Successfully!";
-                SendEmail(approvedOrRejected.EmployeeName,
+                ViewBag.Result = approvedOrRejected.StatusName + " Succesfully";
+                TempData["Success"] = approvedOrRejected.StatusName + " Successfully!";
+                HelperClass.SendEmailFromManager(approvedOrRejected.EmployeeName,
                 approvedOrRejected.LeaveFromDate,
                 approvedOrRejected.LeaveToDate,
                 approvedOrRejected.StatusName,
                 emailID);
             }
-            return View(leavesModel);
+            return View("ApproveOrReject");
         }
         private static void SendEmail(string EmployeeName, DateTime fromDate, DateTime todate, string status, string emailId)
         {

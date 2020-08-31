@@ -65,9 +65,7 @@ namespace LMS.WEB.Portal.Controllers
                     TempData["Success"] = "Added Successfully!";
                     HelperClass.SendEmailFromEmployee(model.ManagerName, model.EmployeeName, model.LeaveFromDate, model.LeaveToDate, mgrEmailID);
                 }
-
             }
-
             return View(model);
         }
         public IActionResult MyLeave()

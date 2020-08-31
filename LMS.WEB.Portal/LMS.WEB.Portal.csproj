@@ -41,6 +41,9 @@
 
 
   <ItemGroup>
+    <Content Update="Views\Admin\ApproveOrReject.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="Views\Manager\ApproveOrReject.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

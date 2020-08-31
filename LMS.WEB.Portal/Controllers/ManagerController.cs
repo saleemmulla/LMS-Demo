@@ -40,31 +40,9 @@ namespace LMS.WEB.Portal.Controllers
             }
             return View(leavesModel);
         }
-        [HttpPost]
-        public ActionResult ApproveOrReject(int id, int sCode)
-        {
-            bool IsLeaveApprovedOrRejected = true;
-            IsLeaveApprovedOrRejected = _leaveRepository.ApproveOrRejectLeave(id, sCode);
-            string userName = HttpContext.Session.GetString("userId");
-            IEnumerable<LeaveModel> leavesModel = _userDetailRepository.GetMyEmployeeLeaveAR(userName);
-            var approvedOrRejected = leavesModel.Where(lm => lm.ID == id).FirstOrDefault();
-            string emailID = _userDetailRepository.GetUserEmailIdByBadgeNumber(approvedOrRejected.BadgeNumber);
-            if (IsLeaveApprovedOrRejected)
-            {
-                ViewBag.Result = "Saved Succesfully";
-                TempData["Success"] = "Added Successfully!";
-               HelperClass.SendEmailFromManager(approvedOrRejected.EmployeeName,
-                approvedOrRejected.LeaveFromDate,
-                approvedOrRejected.LeaveToDate,
-                approvedOrRejected.StatusName,
-                emailID);
-            }
-            return View(leavesModel);
-        }
         public ActionResult ApproveOrRejectLeave(int id, int sCode)
         {
             bool IsLeaveApprovedOrRejected = false;
-            IEnumerable<LeaveModel> leavesModelR = null;
             IsLeaveApprovedOrRejected = _leaveRepository.ApproveOrRejectLeave(id, sCode);
             string userName = HttpContext.Session.GetString("userId");
             IEnumerable<LeaveModel> leavesModel = _userDetailRepository.GetMyEmployeeLeaveAR(userName);
@@ -72,21 +50,15 @@ namespace LMS.WEB.Portal.Controllers
             string emailID = _userDetailRepository.GetUserEmailIdByBadgeNumber(approvedOrRejected.BadgeNumber);
             if (IsLeaveApprovedOrRejected)
             {
-                ViewBag.Result = "Saved Succesfully";
-                TempData["Success"] = "Added Successfully!";
+                ViewBag.Result = approvedOrRejected.StatusName + " Succesfully";
+                TempData["Success"] = approvedOrRejected.StatusName + " Successfully!";
                 HelperClass.SendEmailFromManager(approvedOrRejected.EmployeeName,
                 approvedOrRejected.LeaveFromDate,
                 approvedOrRejected.LeaveToDate,
                 approvedOrRejected.StatusName,
                 emailID);
-
-                if (HttpContext.Session != null && HttpContext.Session.Keys.Contains("userId"))
-                {
-                    leavesModelR = _userDetailRepository.GetMyEmployeeLeaveAR(HttpContext.Session.GetString("userId"));
-                }
-
             }
-            return View("Index");
+            return View("ApproveOrReject");
         }
         public IActionResult ViewDashboard()
         {
@@ -99,6 +71,51 @@ namespace LMS.WEB.Portal.Controllers
                 TempData["leaveMaster"] = leaveMaster;
             }
             return View(leavesModel);
+        }
+        public IActionResult ApplyLeave()
+        {
+            LeaveModel leavemodel = null;
+            if (HttpContext.Session != null && HttpContext.Session.Keys.Contains("userId"))
+            {
+                string userName = HttpContext.Session.GetString("userId");
+                Userdetails userdetails = null;
+                userdetails = _userDetailRepository.GetUserDetailByName(userName);
+                userdetails.ManagerName = _userDetailRepository.GetManagerNameByBadgeNumber(userdetails.ManagerBadgeNumber);
+                TempData["userdetails"] = userdetails;
+                leavemodel = new LeaveModel();
+                leavemodel.BadgeNumber = userdetails.BadgeNumber;
+                leavemodel.ManagerName = userdetails.ManagerName;
+                leavemodel.DepartmentName = userdetails.DepartmentName;
+                leavemodel.EmployeeName = userdetails.FirstName + " " + userdetails.LastName;
+                leavemodel.Status = 1;
+                leavemodel.RequestedOn = DateTime.Now;
+                leavemodel.LeaveType = _userDetailRepository.LeaveType();
+            }
+            return View(leavemodel);
+        }
+        [HttpPost]
+        public async Task<ActionResult> ApplyLeave(LeaveModel model)
+        {
+            model.LeaveType = _userDetailRepository.LeaveType();
+            model.Status = 1;
+            model.RequestedOn = DateTime.Now;
+            if (ModelState.IsValid && ModelState.ErrorCount == 0)
+            {
+                if (model != null)
+                {
+                    int diif = model.LeaveToDate.Subtract(model.LeaveFromDate).Days;
+                    model.NumberOfLeaves = diif == 0 ? 1 : diif + 1;
+                }
+                bool IsLeaveApplied = _leaveRepository.ApplyLeave(model);
+                string mgrEmailID = _userDetailRepository.GetUserMgrEmailIdByUserBadgeNumber(model.BadgeNumber);
+                if (IsLeaveApplied)
+                {
+                    ViewBag.Result = "Saved Succesfully";
+                    TempData["Success"] = "Added Successfully!";
+                    HelperClass.SendEmailFromEmployee(model.ManagerName, model.EmployeeName, model.LeaveFromDate, model.LeaveToDate, mgrEmailID);
+                }
+            }
+            return View(model);
         }
     }
 }
